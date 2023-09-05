@@ -24,19 +24,27 @@ try:
     div_elements = soup.find_all("div")
 
     # Print the titles of the articles
-    print("ALL H1:")
+    print("""---------
+||ALL H1:||
+---------""")
     for title in h1_titles:
         print(title.text)
 
-    print("\nALL H2:")
+    print("""\n---------
+||ALL H2:||
+---------""")
     for title in h2_titles:
         print(title.text)
 
-    print("\nALL H3:")
+    print("""\n---------
+||ALL H3:||
+---------""")
     for title in h3_titles:
         print(title.text)
 
-    print("\nALL DIV:")
+    print("""\n---------
+||ALL DIV:||
+---------""")
     for element in div_elements:
         print(element.text)
 
