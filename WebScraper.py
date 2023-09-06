@@ -23,31 +23,44 @@ try:
     h3_titles = soup.find_all("h3")
     div_elements = soup.find_all("div")
 
-    # Print the titles of the articles
+    # Print the titles of the articles in separate sections
     print("""---------
-||ALL H1:||
+|ALL H1:|
 ---------""")
-    for title in h1_titles:
-        print(title.text)
+    if h1_titles:
+        for title in h1_titles:
+            print(title.text)
+    else:
+        print("**THERE ARE NO H1**")
 
     print("""\n---------
-||ALL H2:||
+|ALL H2:|
 ---------""")
-    for title in h2_titles:
-        print(title.text)
+    if h2_titles:
+        for title in h2_titles:
+            print(title.text)
+    else:
+        print("**THERE ARE NO H2**")
 
     print("""\n---------
-||ALL H3:||
+|ALL H3:|
 ---------""")
-    for title in h3_titles:
-        print(title.text)
+    if h3_titles:
+        for title in h3_titles:
+            print(title.text)
+    else:
+        print("**THERE ARE NO H3**")
 
     print("""\n---------
-||ALL DIV:||
+|ALL div:|
 ---------""")
-    for element in div_elements:
-        print(element.text)
+    if div_elements:
+        for element in div_elements:
+            print(element.text)
+    else:
+        print("**THERE ARE NO DIV**")
 
+    # Provide a message if none of the specified elements were found
     if not h1_titles and not h2_titles and not h3_titles and not div_elements:
         print("No <h1>, <h2>, <h3>, or <div> elements found on the page.")
 
